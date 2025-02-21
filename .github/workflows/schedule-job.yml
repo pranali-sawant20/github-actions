@@ -1,0 +1,20 @@
+#Scheduling a Job in GitHub Actions (Cron in Indian Time - IST 🇮🇳)
+#GitHub Actions cron schedules run in UTC (Coordinated Universal Time) by default. 
+#India Standard Time (IST) is UTC+5:30, so you must convert IST to UTC when scheduling jobs.
+#Example: Run Every Day at 10 AM IST
+#IST → 10:00 AM
+#UTC → 4:30 AM (10:00 - 5:30 = 4:30 AM)
+name: Scheduled Job
+
+on:
+  schedule:
+    - cron: "30 4 * * *"  # 10:00 AM IST
+
+jobs:
+  run-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the Scheduled Job
+        run: echo "This job runs daily at 10 AM IST"
+
+#Runs automatically without a push or manual trigger.
