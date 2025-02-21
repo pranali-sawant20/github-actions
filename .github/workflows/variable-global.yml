@@ -1,0 +1,12 @@
+name: Global variable example
+on: [push]
+
+env:
+ GLOBAL_VAR: "this is a global variable"
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Print the global variable"
+      run: echo "Global variable value:$GOBAL_VAR"
+      #this variable is availabe throghout the workflow
