@@ -1,0 +1,8 @@
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Define and use step variable
+        env:
+          STEP_VAR: "This is a step-specific variable"
+        run: echo "Step variable: $STEP_VAR"
