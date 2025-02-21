@@ -1,0 +1,8 @@
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: "This is a job-specific variable"
+    steps:
+      - name: Print job-level variable
+        run: echo "Job variable: $JOB_VAR"
