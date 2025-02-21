@@ -2,7 +2,7 @@ name: Run the script
 on: [push]
 jobs:
  run-script:
-   run-on: ubuntu-latest
+   runs-on: ubuntu-latest
    steps:
     - name: checkout-repository
       uses: actions/checkout@v4
