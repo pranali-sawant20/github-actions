@@ -1,0 +1,16 @@
+name: Run Script File
+
+on: push
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Make Script Executable
+        run: chmod +x script.sh
+
+      - name: Run the Script
+        run: ./script.sh
